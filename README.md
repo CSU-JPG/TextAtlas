@@ -9,7 +9,7 @@
 
 [**🌐 Homepage**](https://textatlas5m.github.io/) | [**🏆 Leaderboard**](https://textatlas5m.github.io/#leaderboard) | [**🤗 TextAtlas5M**](https://huggingface.co/datasets/CSU-JPG/TextAtlas5M) | [**🤗 TextAtlasEval**](https://huggingface.co/datasets/CSU-JPG/TextAtlasEval) | [**📖 TextAtlas arXiv**](https://arxiv.org/pdf/2502.07870)
 
-This repo contains the evaluation code for the paper "[TextAtals]()" 
+This repo contains the evaluation code for the paper "[TextAtals](https://arxiv.org/pdf/2502.07870)" 
 
 ## Updates
 
