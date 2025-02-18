@@ -6,7 +6,7 @@ import argparse
 from tqdm import tqdm
 from paddleocr import PaddleOCR
 import cv2
-from .cal_ocr_cer import process_data
+from cal_ocr_cer import process_data
 
 def compute_ocr_accuracy_fuzzy_threshold(original_texts, ocr_results, threshold=80):
     total_words = 0
