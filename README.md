@@ -16,10 +16,20 @@ This repo contains the evaluation code for the paper "[TextAtlas5M: A Large-scal
 - released TextAtlasEval version 1.0 :fire:
 
 ## Table of Contents
+- [Setup](#Setup)
 - [Get dataset](#Accessing-TextAtlas)
 - [Evaluation](#Evaluation)
 - [Data Format](#Data-Format)
 
+
+## Setup
+
+```bash
+conda create -n TextAtlasEval python=3.9 
+conda activate TextAtlasEval
+
+pip install -r requirements.txt
+```
 
 ## Accessing TextAtlas
 
