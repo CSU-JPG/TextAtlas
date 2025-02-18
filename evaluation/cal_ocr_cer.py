@@ -46,7 +46,7 @@ def process_data(data: List[Dict]) -> List[Dict]:
     total_distance = 0
     total_cer = 0
     valid_entries = 0
-    
+
     for entry in data:
         gt_text = entry['ground_truth']
         ocr_text = entry['ocr_text']

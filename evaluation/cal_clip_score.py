@@ -3,6 +3,8 @@ from PIL import Image
 from transformers import CLIPProcessor, CLIPModel, AutoTokenizer
 import json
 from tqdm import tqdm
+import argparse
+import os
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device)
@@ -105,41 +107,59 @@ def write_json(save_path, data):
     with open(save_path, 'w') as f:
         json.dump(data, f)
 
-import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--json_file", type=str, default="")
-parser.add_argument("--save_path", type=str, default="")
-args = parser.parse_args()
+def cal_clip_hf(data, output_dir, image_save_dir):
+    save_path = output_dir
 
-json_file = args.json_file
-save_path = args.save_path
+    image_paths = []
+    texts = []
 
-data = read_json(json_file)
-image_paths = []
-texts = []
+    for item in data:
 
-for item in data:
-    try:
+        generated_image_path = os.path.join(image_save_dir, item['image_path'])
+        text = item["annotation"]
+
+        image_paths.append(generated_image_path)
+        texts.append(text)
+
+    batch_size = 32 
+
+
+    clip_scores = calculate_clip_scores_batch(image_paths, texts, batch_size)
+
+    total_clip_score = sum(score for _, score in clip_scores)
+
+    print(f"CLIP score: {total_clip_score} ")
+    write_json(os.path.join(save_path, "clip_scores.json"), clip_scores)
+
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--json_file", type=str, default="")
+    parser.add_argument("--save_path", type=str, default="")
+    args = parser.parse_args()
+
+    json_file = args.json_file
+    save_path = args.save_path
+
+    data = read_json(json_file)
+    image_paths = []
+    texts = []
+
+    for item in data:
         generated_image_path = item['image_path']
         text = item["prompt"]
 
         image_paths.append(generated_image_path)
         texts.append(text)
-    except Exception as e:
-        print(f"Error collecting item: {str(e)}")
-        continue
-
-batch_size = 32 
 
 
-clip_scores = calculate_clip_scores_batch(image_paths, texts, batch_size)
+    batch_size = 32 
 
-total_clip_score = sum(score for _, score in clip_scores)
-valid_comparisons = len(clip_scores)
 
-if valid_comparisons > 0:
-    print(f"CLIP score: {total_clip_score / valid_comparisons} (based on {valid_comparisons} valid comparisons)")
+    clip_scores = calculate_clip_scores_batch(image_paths, texts, batch_size)
+
+    total_clip_score = sum(score for _, score in clip_scores)
+
+    print(f"CLIP score: {total_clip_score}")
     write_json(os.path.join(save_path, "clip_scores.json"), clip_scores)
-else:
-    print("No valid comparisons were made")

@@ -6,6 +6,7 @@ import argparse
 from tqdm import tqdm
 from paddleocr import PaddleOCR
 import cv2
+from .cal_ocr_cer import process_data
 
 def compute_ocr_accuracy_fuzzy_threshold(original_texts, ocr_results, threshold=80):
     total_words = 0
@@ -185,7 +186,8 @@ def main(args):
     total_correct = sum(r['correct_words'] for r in total_results)
     total_predicted = sum(r['predicted_words'] for r in total_results)
     total_ground_truth = sum(r['ground_truth_words'] for r in total_results)
-
+    
+    
     overall_accuracy = total_correct / total_ground_truth * 100 if total_ground_truth > 0 else 0
     overall_precision = total_correct / total_predicted * 100 if total_predicted > 0 else 0
     overall_recall = total_correct / total_ground_truth * 100 if total_ground_truth > 0 else 0
@@ -198,6 +200,54 @@ def main(args):
     print(f"F1 Score: {overall_f1:.2f}%")
 
     return overall_accuracy, overall_precision, overall_recall, overall_f1
+
+def cal_ocr_hf(data, output_dir, image_save_dir,threshold=80):
+    evaluator = OCREvaluatorFuzzy(threshold=threshold)
+    total_results = []
+    result_data = []
+
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    for item in tqdm(data):
+        image_path = os.path.join(image_save_dir, item['image_path'])
+        ground_truth = item['raw_text']
+        ocr_text = evaluator.detect_text(image_path)
+        metrics = evaluator.compute_metrics(ground_truth, ocr_text)
+        total_results.append(metrics)
+        result_data.append({
+            'image_path': image_path,
+            'ground_truth': ground_truth,
+            'ocr_text': ocr_text,
+            'metrics': metrics
+        })
+    with open(os.path.join(output_dir, 'ocr_results.json'), 'w') as f:
+        json.dump(result_data, f, indent=4)
+
+
+    # Calculate and print overall metrics
+    total_correct = sum(r['metrics']['correct_words'] for r in result_data)
+    total_predicted = sum(r['metrics']['predicted_words'] for r in result_data)
+    total_ground_truth = sum(r['metrics']['ground_truth_words'] for r in result_data)
+    overall_accuracy = total_correct / total_ground_truth * 100 if total_ground_truth > 0 else 0
+    overall_precision = total_correct / total_predicted * 100 if total_predicted > 0 else 0
+    overall_recall = total_correct / total_ground_truth * 100 if total_ground_truth > 0 else 0
+    
+    overall_f1 = 2 * (overall_precision * overall_recall) / (overall_precision + overall_recall) if (overall_precision + overall_recall) > 0 else 0
+    
+    _, avg_distance, avg_cer = process_data(result_data)
+
+    print("\nOverall Metrics:")
+    print(f"OCR Accuracy: {overall_accuracy:.2f}%")
+    print(f"OCR F1 Score: {overall_f1:.2f}%")
+    print(f"OCR CER: {avg_cer:.2f}")
+
+    with open(os.path.join(output_dir, 'ocr_metrics.json'), 'w') as f:
+        json.dump({
+            'overall_accuracy': overall_accuracy,
+            'overall_f1': overall_f1,
+            'avg_cer': avg_cer
+        }, f, indent=4)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
