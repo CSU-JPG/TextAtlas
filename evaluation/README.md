@@ -1,8 +1,26 @@
-# Evaluation Guidelines
-We provide detailed instructions for evaluation. 
-To execute our evaluation script, please ensure that the structure of your model outputs is the same as ours.
+# Get Evaluation Data
+You can access our TextAtlasEval data and get detailed information about the data at the following address: [**🤗 TextAtlasEval Dataset**](https://huggingface.co/datasets/CSU-JPG/TextAtlasEval)
 
-## Json format
+
+# Evaluation Guidelines
+
+We provide detailed evaluation instructions.
+We offer two testing methods: one is through calling the Huggingface dataset loader, and the other is by building your own JSON for testing.
+
+## Calling Huggingface
+When using this method, please ensure that the generated image names match the image names in the dataset.
+
+### Calculate FID score
+
+```
+python eval_script.sh 
+```
+
+
+
+## Using self builded Json
+When using this method, make sure that the structure of the JSON output you save is the same as ours.
+### Json format
 If you want to get the evaluation score of your generation result.
 
 You can provide all the outputs in *one file* in the following format:
@@ -16,7 +34,6 @@ You can provide all the outputs in *one file* in the following format:
 },
 ....
 ```
-
 ## calculate FID score
 
 ```
