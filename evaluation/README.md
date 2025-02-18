@@ -14,7 +14,8 @@ You can access our TextAtlasEval data and get detailed information about the dat
 # Evaluation Guidelines
 
 We provide detailed evaluation instructions.
-The evaluation should be conducted after you generate the images using your model.
+
+**The evaluation should be conducted after you generate the images using your model.**
 
 We offer two evaluation methods: one is through calling the Huggingface dataset loader, and the other is by building your own JSON for testing.
 
