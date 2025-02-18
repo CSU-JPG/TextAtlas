@@ -7,7 +7,7 @@ You can access our TextAtlasEval data and get detailed information about the dat
 We provide detailed evaluation instructions.
 We offer two testing methods: one is through calling the Huggingface dataset loader, and the other is by building your own JSON for testing.
 
-## Calling Huggingface
+## Using Huggingface Dataset
 When using this method, please ensure that the generated image names match the image names in the dataset.
 
 ### Calculate FID score
@@ -41,7 +41,7 @@ python eval_script.py \
 
 
 
-## Using self builded Json
+## Using Self-builded Json
 When using this method, make sure that the structure of the JSON output you save is the same as ours.
 ### Json format
 If you want to get the evaluation score of your generation result.
