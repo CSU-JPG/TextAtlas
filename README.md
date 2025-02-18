@@ -12,12 +12,12 @@
 This repo contains the evaluation code for the paper "[TextAtlas5M: A Large-scale Dataset for Dense Text Image Generation](https://arxiv.org/pdf/2502.07870)" 
 
 ## Updates
-
-- released TextAtlasEval version 1.0 :fire:
+- [2025-2-18]: Our evaluation code is now availble! 🌟
+- [2025-2-13]: released TextAtlasEval & TextAtlas5M version 1.0 :fire:
 
 ## Table of Contents
 - [Setup](#Setup)
-- [Get dataset](#Accessing-TextAtlas)
+- [Accessing Datasets](#Accessing-TextAtlas)
 - [Evaluation](#Evaluation)
 - [Data Format](#Data-Format)
 
@@ -31,7 +31,7 @@ conda activate TextAtlasEval
 pip install -r requirements.txt
 ```
 
-## Accessing TextAtlas
+## Accessing Datasets
 
 TextAtlas was meticulously designed to challenge and evaluate text-rich image generation. For more detailed information and accessing our dataset, please refer to our Huggingface page:
 - [**🤗 TextAtlas5M**](https://huggingface.co/datasets/CSU-JPG/TextAtlas5M) 
