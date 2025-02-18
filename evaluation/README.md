@@ -2,6 +2,15 @@
 You can access our TextAtlasEval data and get detailed information about the data at the following address: [**🤗 TextAtlasEval Dataset**](https://huggingface.co/datasets/CSU-JPG/TextAtlasEval)
 
 
+## Dataset Features
+
+* `image (img)`: The GT image.
+* `annotation (string)`: The input prompt used to generate the text.
+* `image_path (string)`: The image name.
+* `raw_text (string)`: The text that appears in the image.
+
+
+
 # Evaluation Guidelines
 
 We provide detailed evaluation instructions.
@@ -14,6 +23,7 @@ When using this method, please ensure that the generated image names match the `
 
 ```
 python eval_script.py \
+    --dataset_type <choose from "styledtextsynth", "textvisionblend", "textsceneshq"> \
     --output_dir <Path you want to save the evaluation result> \
     --image_save_dir <folder that you save the generated images> \
     --cal_fid
@@ -24,6 +34,7 @@ python eval_script.py \
 
 ```
 python eval_script.py \
+    --dataset_type <choose from "styledtextsynth", "textvisionblend", "textsceneshq"> \
     --output_dir <Path you want to save the evaluation result> \
     --image_save_dir <folder that you save the generated images> \
     --cal_clip
@@ -34,6 +45,7 @@ python eval_script.py \
 
 ```
 python eval_script.py \
+    --dataset_type <choose from "styledtextsynth", "textvisionblend", "textsceneshq"> \
     --output_dir <Path you want to save the evaluation result> \
     --image_save_dir <folder that you save the generated images> \
     --cal_ocr
