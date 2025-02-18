@@ -41,41 +41,28 @@ The TextAtlas annotation documentation is available in huggingface:
 - **Meta data**: Includes all the data from main version, along with additional intermediate results such as bounding boxes (bbox), font size, and other related information, which can be used for further data analysis or processing.
 
 ### Example
+
+
 ```json
 {
-  "image_path": "000004f933f14f65bfcd6ee1d54d4e69.png",
-  "annotation": "	A 512x512 text image with the following settings: font_size 231 , font_type Winterday-jEqqO , font_color [77, 34, 70] displaying the text: the library."
+  "image_path": "0000089b-f1ce-41cf-9cd8-688856822244.png",
+  "annotation": "In an opulent boutique, a sleek white digital display contrasts sharply with meticulously arranged merchandise and luxurious decor, creating a striking visual focal point. digital display with the text : ''Amidst the opulent ambiance of the upscale boutique, a sleek white digital display stands out as a striking contrast to the meticulously arranged merchandise and sumptuous luxury decor''"
 }
 ```
-
 
 | entry                 | description                                                                                                                                                                            |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `image_path`          | `str`, The image name                                                                                                                                                                     |
 | `annotatoin` | `str`, Full Description                                                                                                                                                                | 
 
+
+More Examples with images can be founded in [**🤗 TextAtlas5M Dataset**](https://huggingface.co/datasets/CSU-JPG/TextAtlas5M) and [**🤗 TextAtlasEval Dataset**](https://huggingface.co/datasets/CSU-JPG/TextAtlasEval)
+
+
 ### For Metadata
 In addition to the data from main version, meta data includes intermediate results retained during the processing of different subsets. These results provide useful metadata for further analysis, such as bounding boxes (bbox), font size, and other processing details.
 
-Please refer to the [**TextAtlas Detailed Annotation**](detialed_annotation) for more comprehensive details on the second version annotations.
-
-
-## Data Level, Datasets, and Annotations Overview
-
-| Data Split       | Dataset Name      | #Samples  | Annotations                  | Type             | Token Length | Contain Structured info|
-|------------------|-------------------|-----------|------------------------------|------------------|--------------|--------------|
-| Synthetic Images | CleanTextSynth    | 1,907,721 | Real Text                    | Pure Text        | 70.70        |       ❌       |
-| Synthetic Images | TextVisionBlend   | 547,837   | Parsed json+BLIP Caption     | Pure Text        | 265.62       |       ✅       | 
-| Synthetic Images | StyledTextSynth   | 426,755   | Human+ QWEN+Intern-VL        | Synthetic Image  | 90.00        |       ✅      |
-| -                | -                 | -         | -                            | -                | -            | -            |
-| Real Images      | PPT2Details       | 298565    | QWEN2-VL Caption             | Powerpoint Image | 121.97       |       ❌       |
-| Real Images      | PPT2Structured    | 96457     | Parsed json+QWEN2-VL Caption | Powerpoint Image | 774.67       |       ✅       |
-| Real Images      | LongWordsSubset-A | 266534    | Caption + OCR                | Real Image       | 38.57        |       ❌       |
-| Real Images      | LongWordsSubset-M | 1299992   | Caption + OCR                | Real Image       | 34.07        |        ❌      |
-| Real Images      | Cover Book        | 207566    | Name + Author + Category     | Real Image       | 28.01        |        ❌      |
-| Real Images      | Paper2Text        | 356,658       | PyMuPdf phrased Text         | Pure Text        | 28.01        |      ❌        |
-| Real Images      | TextScenesHQ      | 36,576     | Human+Llama+Qwen+GPT4o       | Real Image       | 120.81       |         ✅     |
-| In Total         | TextAtlas5M 5M    | ～ 5M        | -                            | -                | 148.82       |              |
+Please refer to the [**TextAtlas Detailed Annotation**](detialed_annotation) for more comprehensive details on the meta annotations.
 
 
 ## Citation
