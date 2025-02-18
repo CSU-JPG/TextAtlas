@@ -43,14 +43,15 @@ The TextAtlas annotation documentation is available in huggingface:
 ### Example
 ```json
 {
-  "image_path": "path to the Image",
-  "annotation": "A formal presentation hall with an audience attentively listening to a speaker at a podium, with a large screen displaying the text: 'Furthermore, the research highlighted the critical role of climate-resilient infrastructure, such as irrigation systems and storage facilities, in supporting agricultural production and food security in the face of climate-related'."
+  "image_path": "000004f933f14f65bfcd6ee1d54d4e69.png",
+  "annotation": "	A 512x512 text image with the following settings: font_size 231 , font_type Winterday-jEqqO , font_color [77, 34, 70] displaying the text: the library."
 }
 ```
 
+
 | entry                 | description                                                                                                                                                                            |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `image_path`          | `str`, path to image                                                                                                                                                                     |
+| `image_path`          | `str`, The image name                                                                                                                                                                     |
 | `annotatoin` | `str`, Full Description                                                                                                                                                                | 
 
 ### For Metadata
