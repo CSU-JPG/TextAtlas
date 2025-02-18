@@ -8,7 +8,7 @@ We provide detailed evaluation instructions.
 We offer two testing methods: one is through calling the Huggingface dataset loader, and the other is by building your own JSON for testing.
 
 ## Using Huggingface Dataset
-When using this method, please ensure that the generated image names match the image names in the dataset.
+When using this method, please ensure that the generated image names match the `image_path` in the data.
 
 ### Calculate FID score
 
