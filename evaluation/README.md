@@ -13,7 +13,30 @@ When using this method, please ensure that the generated image names match the i
 ### Calculate FID score
 
 ```
-python eval_script.sh 
+python eval_script.py \
+    --output_dir <Path you want to save the evaluation result> \
+    --image_save_dir <folder that you save the generated images> \
+    --cal_fid
+```
+
+
+### Calculate CLIP score
+
+```
+python eval_script.py \
+    --output_dir <Path you want to save the evaluation result> \
+    --image_save_dir <folder that you save the generated images> \
+    --cal_clip
+```
+
+
+### Calculate OCR score
+
+```
+python eval_script.py \
+    --output_dir <Path you want to save the evaluation result> \
+    --image_save_dir <folder that you save the generated images> \
+    --cal_ocr
 ```
 
 
