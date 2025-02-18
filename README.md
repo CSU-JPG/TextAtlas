@@ -23,12 +23,12 @@ This repo contains the evaluation code for the paper "[TextAtlas5M: A Large-scal
 
 ## Accessing TextAtlas
 
-TextAtlas was meticulously designed to challenge and evaluate text-rich image generation. For more detailed information, please refer to our Hugging Face datasets:
-- [**🤗 TextAtlas5M Dataset**](https://huggingface.co/datasets/CSU-JPG/TextAtlas5M) 
-- [**🤗 TextAtlasEval Dataset**](https://huggingface.co/datasets/CSU-JPG/TextAtlasEval)
+TextAtlas was meticulously designed to challenge and evaluate text-rich image generation. For more detailed information and accessing our dataset, please refer to our Huggingface page:
+- [**🤗 TextAtlas5M**](https://huggingface.co/datasets/CSU-JPG/TextAtlas5M) 
+- [**🤗 TextAtlasEval**](https://huggingface.co/datasets/CSU-JPG/TextAtlasEval)
 
 ## Evaluation
-Please refer to our evaluation folders for detailed information on evaluating with TextAtlas benchmark:
+Please refer to our evaluation folders for detailed information on evaluating with TextAtlasEval benchmark:
 
 - [**TextAtlas Evaluation**](evaluation)
 
@@ -56,7 +56,7 @@ The TextAtlas annotation documentation is available in huggingface:
 | `annotatoin` | `str`, Full Description                                                                                                                                                                | 
 
 
-More Examples with images can be founded in [**🤗 TextAtlas5M Dataset**](https://huggingface.co/datasets/CSU-JPG/TextAtlas5M) and [**🤗 TextAtlasEval Dataset**](https://huggingface.co/datasets/CSU-JPG/TextAtlasEval)
+More Examples with images can be founded in [**🤗 TextAtlas5M**](https://huggingface.co/datasets/CSU-JPG/TextAtlas5M) and [**🤗 TextAtlasEval**](https://huggingface.co/datasets/CSU-JPG/TextAtlasEval)
 
 
 ### For Metadata
