@@ -79,12 +79,12 @@ Please refer to the [**TextAtlas Detailed Annotation**](detialed_annotation) for
 
 If you found our work useful, please consider citing:
 ```
-@inproceedings{wang2025large,
-            title={A Large-scale Dataset for Dense Text Image Generation},
-            author={Alex Jinpeng Wang and Dongxing Mao and  Jiawei Zhang and weiming Han and Zhuobai Dong and Linjie Li and Yiqi Lin and Zhengyuan Yang and Libo Qin and Fuwei Zhang and Lijuan Wang and Min Li},
-            booktitle={arXiv preprint arXiv: 2502.07870},
-            year={2025},
-        }
+@article{wang2025textatlas5m,
+  title={TextAtlas5M: A Large-scale Dataset for Dense Text Image Generation},
+  author={Wang, Alex Jinpeng and Mao, Dongxing and Zhang, Jiawei and Han, Weiming and Dong, Zhuobai and Li, Linjie and Lin, Yiqi and Yang, Zhengyuan and Qin, Libo and Zhang, Fuwei and others},
+  journal={arXiv preprint arXiv:2502.07870},
+  year={2025}
+}
 ```
 
 
