@@ -128,9 +128,11 @@ def cal_clip_hf(data, output_dir, image_save_dir):
     clip_scores = calculate_clip_scores_batch(image_paths, texts, batch_size)
 
     total_clip_score = sum(score for _, score in clip_scores)
+    average_clip_score = total_clip_score / len(clip_scores)
 
-    print(f"CLIP score: {total_clip_score} ")
+    print(f"CLIP score: {average_clip_score}")
     write_json(os.path.join(save_path, "clip_scores.json"), clip_scores)
+    write_json(os.path.join(save_path, "average_clip_score.json"), average_clip_score)
 
 if __name__ == "__main__":
 
@@ -161,5 +163,8 @@ if __name__ == "__main__":
 
     total_clip_score = sum(score for _, score in clip_scores)
 
-    print(f"CLIP score: {total_clip_score}")
+    average_clip_score = total_clip_score / len(clip_scores)
+    print(f"CLIP score: {average_clip_score}")
+
     write_json(os.path.join(save_path, "clip_scores.json"), clip_scores)
+    write_json(os.path.join(save_path, "average_clip_score.json"), average_clip_score)
