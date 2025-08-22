@@ -31,8 +31,6 @@ Below are **subset-specific results** (CS ↑, Acc ↑, F1 ↑, CER ↓).
 
 👉 More complete results are available on our [**Leaderboard**](https://textatlas5m.github.io/#leaderboard).
 
----
-
 ### CleanTextSynth(c) & TextVisionBlend(b)
 
 | Method              | CS(c)   | Acc(c)  | F1(c)    | CER(c)  |CS(b)   | Acc(b)  | F1(b)    | CER(b)  |
