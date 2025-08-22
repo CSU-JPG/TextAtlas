@@ -16,11 +16,40 @@ This repo contains the evaluation code for the paper "[TextAtlas5M: A Large-scal
 - [2025-2-13]: released TextAtlasEval & TextAtlas5M version 1.0 :fire:
 
 ## Table of Contents
+- [Evaluation Performance](#Evaluation-Peformance)
 - [Setup](#Setup)
 - [Accessing Datasets](#Accessing-TextAtlas)
 - [Evaluation](#Evaluation)
 - [Data Format](#Data-Format)
 
+
+
+## Evaluation Peformance
+
+We benchmark multiple models on **TextAtlasEval**.  
+Below are **subset-specific results** (CS ↑, Acc ↑, F1 ↑, CER ↓).  
+
+👉 More complete results are available on our [**Leaderboard**](https://textatlas5m.github.io/#leaderboard).
+
+---
+
+### CleanTextSynth(c) & TextVisionBlend(b)
+
+| Method              | CS(c)   | Acc(c)  | F1(c)    | CER(c)  |CS(b)   | Acc(b)  | F1(b)    | CER(b)  |
+|---------------------|------|-------|-------|------|------|-------|-------|------|
+| AnyText             | 0.21 | 0.18  | 0.34  | 0.99 | 0.21 | 0.18  | 0.34  | 0.99 |
+| SD-3.5 Large        | **0.28** | 12.0  | 18.2  | 0.84 | 0.18 | 14.55  | 16.25  | 0.88 |
+| GPT-4o _(closed)_   | *0.27* | **60.69** | **74.44** | *0.36* | 0.15 | **91.78**  | **82.07**  | **0.15** |
+| Grok3 _(closed)_    | **0.28** | 31.08 | 40.81 | 0.44 | 0.17 | 41.54  | 44.22  | 0.57 |
+
+### StyledTextSynth(s) & TextScenesHQ(h)
+
+| Method              | CS(s)   | Acc(s)   | F1(s)    | CER(s)  | CS(h)   | Acc(h)   | F1(h)    | CER(h)  |
+|---------------------|------|-------|-------|------|------|-------|-------|------|
+| Qwen Image          | **0.30** | *66.20* | *73.92* | *0.35* |*0.33* | *71.82* | *68.70* | *0.34* |
+| SD-3.5 Large        | 0.28 | 27.21 | 33.86 | 0.73 | 0.24 | 19.03 | 24.45 | 0.73 |
+| GPT-4o _(closed)_   | **0.30** | **77.47** | **80.76** | **0.21** |*0.33* | **82.88** | **78.68** | **0.32** |
+| Grok3 _(closed)_    | *0.29* | 15.82 | 21.40 | 0.73 |0.32| 35.07 | 37.94 | 0.57 |
 
 ## Setup
 
