@@ -12,6 +12,7 @@
 This repo contains the evaluation code for the paper "[TextAtlas5M: A Large-scale Dataset for Dense Text Image Generation](https://arxiv.org/pdf/2502.07870)" 
 
 ## Updates
+- [2025-9-26]: We added **Nano-Banana** results on our benchmark! 🌟
 - [2025-2-18]: Our evaluation code is now availble! 🌟
 - [2025-2-13]: released TextAtlasEval & TextAtlas5M version 1.0 :fire:
 
@@ -37,8 +38,9 @@ Below are **subset-specific results** (CS ↑, Acc ↑, F1 ↑, CER ↓).
 |---------------------|------|-------|-------|------|------|-------|-------|------|
 | AnyText             | 0.21 | 0.18  | 0.34  | 0.99 | 0.21 | 0.18  | 0.34  | 0.99 |
 | SD-3.5 Large        | **0.28** | 12.0  | 18.2  | 0.84 | 0.18 | 14.55  | 16.25  | 0.88 |
-| GPT-4o _(closed)_   | *0.27* | **60.69** | **74.44** | *0.36* | 0.15 | **91.78**  | **82.07**  | **0.15** |
+| GPT-4o _(closed)_   | *0.27* | *60.69* | **74.44** | *0.36* | 0.15 | *91.78*  | **82.07**  | **0.15** |
 | Grok3 _(closed)_    | **0.28** | 31.08 | 40.81 | 0.44 | 0.17 | 41.54  | 44.22  | 0.57 |
+| Nano Banana _(closed)_    | 0.25 | **65.80** | *73.66* | **0.23** | 0.15 | **93.49**  | *80.30*  | *0.26* |
 
 ### StyledTextSynth(s) & TextScenesHQ(h)
 
@@ -48,7 +50,7 @@ Below are **subset-specific results** (CS ↑, Acc ↑, F1 ↑, CER ↓).
 | SD-3.5 Large        | 0.28 | 27.21 | 33.86 | 0.73 | 0.24 | 19.03 | 24.45 | 0.73 |
 | GPT-4o _(closed)_   | **0.30** | **77.47** | **80.76** | **0.21** |*0.33* | **82.88** | **78.68** | **0.32** |
 | Grok3 _(closed)_    | *0.29* | 15.82 | 21.40 | 0.73 |0.32| 35.07 | 37.94 | 0.57 |
-
+| Nano Banana _(closed)_    | **0.30** | 64.09 | 70.93 | 0.39 | 0.33 | *75.15*  | *70.99*  | 0.36 |
 ## Setup
 
 ```bash
